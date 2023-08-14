@@ -1,0 +1,27 @@
+controllers:
+    resource: ../src/Controller/
+    type: annotation
+
+kernel:
+    resource: ../src/Kernel.php
+    type: annotation
+
+product_delete:
+    path: '/product/{id}/delete'
+    controller: 'App\Controller\ProductController::delete'
+    methods: [DELETE, POST]
+
+parse_product_form:
+    path: /custom_parse
+    controller: App\Controller\ProductController::customForm
+    methods: ['GET', POST]
+
+parse_product_process:
+    path: /parse_product_process
+    controller: App\Controller\ProductController::parseProduct
+    methods: ['GET', 'POST']
+
+parse_error:
+    path: /parse/error
+    controller: App\Controller\ProductController::parseError
+    methods: ['GET']

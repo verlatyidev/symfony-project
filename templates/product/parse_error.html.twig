@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1>Error during parsing</h1>
+    <p>An error occurred during parsing the product. Please check the URL or try again later.</p>
+
+    {% if app.environment == 'dev' %}
+        <pre>{{ error }}</pre>
+    {% endif %}
+{% endblock %}

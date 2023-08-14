@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1>Add New Product</h1>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <a href="{{ path('product_index') }}">Product List</a>
+    <button type="submit">Save</button>
+    <p><b>Significant Information.</b> The product addition process uses a direct link to an image from the internet.
+        It's important to note that it doesn't save it in the project.
+        If the photo needs to be saved within the project, it's necessary to run parsing on the product link
+        from Alza.cz.</p>
+    {{ form_end(form) }}
+{% endblock %}

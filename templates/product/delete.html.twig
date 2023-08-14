@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1>Delete Product</h1>
+    <p>Are you sure you want to delete the product "{{ product.name }}"?</p>
+
+    <form method="post" action="{{ path('product_delete', {'id': product.id}) }}">
+        <input type="hidden" name="_method" value="DELETE">
+        <button type="submit">Delete</button>
+    </form>
+
+    <a href="{{ path('product_show', {'id': product.id}) }}">Cancel</a>
+{% endblock %}
