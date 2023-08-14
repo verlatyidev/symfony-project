@@ -90,7 +90,7 @@ parseError(): Страница ошибки при парсинге.
    127.0.0.1       symfony-project.loc
 
 2. Клонирование репозитория:
-TODO 
+   git clone https://github.com/verlatyidev/symfony-project.git
 
 3. Построение Docker образа:
    docker-compose build
