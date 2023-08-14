@@ -93,7 +93,6 @@ class ProductParser
                 default => 0.0,
             };
 
-//        $imageElement = $crawler->filter('#tabs div.tabsStickyBg div div img');
             $imageElement = $crawler->filter('#tabs img');
             $imageSrc = $imageElement->attr('src');
 
@@ -123,13 +122,11 @@ class ProductParser
 
             //Add logic to load and save an image with Symfony Filesystem
             if ($imageSrc) {
-                $imageUrl = $imageSrc;
-//                $imageContent = @file_get_contents($imageUrl);
-                $imageResponse = $httpClient->request('GET', $imageUrl);
+                $imageResponse = $httpClient->request('GET', $imageSrc);
                 $imageContent = $imageResponse->getContent();
 
                 if ($imageContent === false) {
-                    $this->logger->error('Failed to fetch the image content from URL: ' . $imageUrl);
+                    $this->logger->error('Failed to fetch the image content from URL: ' . $imageSrc);
                     throw new Exception('Failed to fetch the image content');
                 }
 

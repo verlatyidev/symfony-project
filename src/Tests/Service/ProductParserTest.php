@@ -112,7 +112,7 @@ class ProductParserTest extends TestCase
         $productParser = new ProductParser(
             $productRepository,
             $logger,
-            '/home/user/sites/symfony-project',
+            'symfony-project',
             $httpClient
         );
 
